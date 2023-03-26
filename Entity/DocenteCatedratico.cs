@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    internal class DocenteCatedratico
+    public class DocenteCatedratico : Docente
     {
+        public int Horas { get; set; }
+        public double ValorHora { get; set; }
+        public DocenteCatedratico(int horas, double valorHora)
+        {
+            Horas = horas;
+            ValorHora = valorHora;
+            Salario = Horas * ValorHora;
+        }
+
     }
 }
