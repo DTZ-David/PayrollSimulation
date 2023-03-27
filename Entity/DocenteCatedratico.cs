@@ -10,11 +10,18 @@ namespace Entity
     {
         public int Horas { get; set; }
         public double ValorHora { get; set; }
+        public double Salud { get; set; }
+        public double Pension { get; set; }
+        public double Cesantias { get; set; }
+       
         public DocenteCatedratico(int horas, double valorHora)
         {
             Horas = horas;
             ValorHora = valorHora;
-            Salario = Horas * ValorHora;
+            Sueldo = Horas * ValorHora;
+            Salud = Sueldo * 0.125;
+            Pension = Sueldo * 0.16;
+            Cesantias = (Sueldo * (horas / 3)) / 360;
         }
 
     }

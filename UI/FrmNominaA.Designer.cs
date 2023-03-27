@@ -39,6 +39,7 @@
             SalarioNetoTxt = new TextBox();
             TotalDocentesTxt = new TextBox();
             TotalNominaTxt = new TextBox();
+            CrearPdfBtn = new Button();
             SuspendLayout();
             // 
             // BtnCalcular
@@ -80,6 +81,7 @@
             DocentesCatedraticosTxt.Name = "DocentesCatedraticosTxt";
             DocentesCatedraticosTxt.Size = new Size(88, 27);
             DocentesCatedraticosTxt.TabIndex = 3;
+            DocentesCatedraticosTxt.KeyPress += DocentesCatedraticosTxt_KeyPress;
             // 
             // DocentesOcasionalesTxt
             // 
@@ -87,6 +89,7 @@
             DocentesOcasionalesTxt.Name = "DocentesOcasionalesTxt";
             DocentesOcasionalesTxt.Size = new Size(88, 27);
             DocentesOcasionalesTxt.TabIndex = 4;
+            DocentesOcasionalesTxt.KeyPress += DocentesOcasionalesTxt_KeyPress;
             // 
             // label3
             // 
@@ -142,12 +145,23 @@
             TotalNominaTxt.Size = new Size(125, 27);
             TotalNominaTxt.TabIndex = 10;
             // 
+            // CrearPdfBtn
+            // 
+            CrearPdfBtn.Location = new Point(197, 187);
+            CrearPdfBtn.Name = "CrearPdfBtn";
+            CrearPdfBtn.Size = new Size(174, 39);
+            CrearPdfBtn.TabIndex = 11;
+            CrearPdfBtn.Text = "Generar PDF";
+            CrearPdfBtn.UseVisualStyleBackColor = true;
+            CrearPdfBtn.Click += CrearPdfBtn_Click;
+            // 
             // FrmNominaA
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(731, 473);
+            Controls.Add(CrearPdfBtn);
             Controls.Add(TotalNominaTxt);
             Controls.Add(TotalDocentesTxt);
             Controls.Add(SalarioNetoTxt);
@@ -179,5 +193,6 @@
         private TextBox SalarioNetoTxt;
         private TextBox TotalDocentesTxt;
         private TextBox TotalNominaTxt;
+        private Button CrearPdfBtn;
     }
 }

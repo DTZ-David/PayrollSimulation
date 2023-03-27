@@ -53,6 +53,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 545);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
@@ -136,7 +137,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(83, 3);
+            pictureBox1.Location = new Point(87, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(601, 496);
             pictureBox1.TabIndex = 0;

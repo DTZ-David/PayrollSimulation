@@ -8,7 +8,8 @@ namespace Entity
 {
     public class Docente
     {
-        public double Salario;
-        
+        public double Sueldo;
+       
+
     }
 }

@@ -43,5 +43,18 @@ namespace BLL
                 return "Se presentó el siguiente error:" + exception.Message;
             }
         }
+        public string CrearPDF()
+        {
+            try
+            {
+                docenteRepository.CrearDocumento();
+                return "PDF Creado Satisfactoriamente";
+            }
+            catch (Exception exception)
+            {
+
+                return "Se presentó el siguiente error:" + exception.Message;
+            }
+        }
     }
 }
