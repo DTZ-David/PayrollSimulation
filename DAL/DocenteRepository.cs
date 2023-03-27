@@ -13,10 +13,10 @@ namespace DAL
 {
     public class DocenteRepository
     {
-        string rutaO = "C:\\Users\\davii\\source\\repos\\Payroll Simulation\\DocentesO.txt";
-        string rutaC = "C:\\Users\\davii\\source\\repos\\Payroll Simulation\\DocentesC.txt";
-        string rutaPDF = "C:\\Users\\davii\\source\\repos\\Payroll Simulation\\Docentes.pdf";
-        string ruta= "C:\\Users\\davii\\source\\repos\\Payroll Simulation\\Docentes.txt";
+        string rutaO = "C:\\Users\\dilan\\source\\repos\\DTZ-David\\PayrollSimulation\\DocentesO.txt";
+        string rutaC = "C:\\Users\\dilan\\source\\repos\\DTZ-David\\PayrollSimulation\\DocentesC.txt";
+        string rutaPDF = "C:\\Users\\dilan\\source\\repos\\DTZ-David\\PayrollSimulation\\Docentes.pdf";
+        string ruta= "C:\\Users\\dilan\\source\\repos\\DTZ-David\\PayrollSimulation\\Docentes.txt";
         public void GuardarDocentesOcasionales(DocenteOcasional docenteOcasional)
         {
             FileStream file = new FileStream(rutaO, FileMode.Append);
@@ -37,7 +37,8 @@ namespace DAL
                 docenteC.Sueldo + ";" +
                 docenteC.Salud + ";" +
                 docenteC.Pension + ";" +
-                docenteC.Cesantias);
+                docenteC.Cesantias + ";" +
+                docenteC.SalarioTotal);
             writer.Close();
             file.Close();
         }
@@ -50,7 +51,7 @@ namespace DAL
         }
         public void CrearDocumento()
         {
-            CrearDocDocentesOcasionales();
+            //CrearDocDocentesOcasionales();
             CrearDocDocentesCatedraticos();
 
         }
@@ -63,7 +64,7 @@ namespace DAL
             try
             {
 
-                PdfPTable tabla = new PdfPTable(6);
+                PdfPTable tabla = new PdfPTable(7);
                 tabla.WidthPercentage = 100;
                 string[] lineas = File.ReadAllLines(rutaC);
                 Paragraph titulo = new Paragraph("NOMINA DOCENTES CATEDRATICOS", new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD, BaseColor.BLACK));
@@ -77,6 +78,7 @@ namespace DAL
                 PdfPCell celdaSalud = new PdfPCell(new Phrase("Salud"));
                 PdfPCell celdaPension = new PdfPCell(new Phrase("Pension"));
                 PdfPCell celdaCesantias = new PdfPCell(new Phrase("Cesantias"));
+                PdfPCell celdaSalario = new PdfPCell(new Phrase("SalarioFinal"));
 
                 tabla.AddCell(celdaHoras);
                 tabla.AddCell(celdaValorHora);
@@ -84,6 +86,8 @@ namespace DAL
                 tabla.AddCell(celdaSalud);
                 tabla.AddCell(celdaPension);
                 tabla.AddCell(celdaCesantias);
+                tabla.AddCell(celdaSalario);
+
 
                 foreach (string linea in lineas)
                 {
