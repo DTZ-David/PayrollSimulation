@@ -33,13 +33,12 @@
             label2 = new Label();
             DocentesCatedraticosTxt = new TextBox();
             DocentesOcasionalesTxt = new TextBox();
-            label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            SalarioNetoTxt = new TextBox();
             TotalDocentesTxt = new TextBox();
             TotalNominaTxt = new TextBox();
             CrearPdfBtn = new Button();
+            BtnMostrarTotal = new Button();
             SuspendLayout();
             // 
             // BtnCalcular
@@ -91,17 +90,6 @@
             DocentesOcasionalesTxt.TabIndex = 4;
             DocentesOcasionalesTxt.KeyPress += DocentesOcasionalesTxt_KeyPress;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(49, 288);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 22);
-            label3.TabIndex = 5;
-            label3.Text = "Salario Neto:";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -124,13 +112,6 @@
             label5.TabIndex = 7;
             label5.Text = "Total Nomina:";
             // 
-            // SalarioNetoTxt
-            // 
-            SalarioNetoTxt.Location = new Point(246, 283);
-            SalarioNetoTxt.Name = "SalarioNetoTxt";
-            SalarioNetoTxt.Size = new Size(125, 27);
-            SalarioNetoTxt.TabIndex = 8;
-            // 
             // TotalDocentesTxt
             // 
             TotalDocentesTxt.Location = new Point(246, 332);
@@ -147,6 +128,7 @@
             // 
             // CrearPdfBtn
             // 
+            CrearPdfBtn.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             CrearPdfBtn.Location = new Point(197, 187);
             CrearPdfBtn.Name = "CrearPdfBtn";
             CrearPdfBtn.Size = new Size(174, 39);
@@ -155,19 +137,28 @@
             CrearPdfBtn.UseVisualStyleBackColor = true;
             CrearPdfBtn.Click += CrearPdfBtn_Click;
             // 
+            // BtnMostrarTotal
+            // 
+            BtnMostrarTotal.Location = new Point(438, 386);
+            BtnMostrarTotal.Name = "BtnMostrarTotal";
+            BtnMostrarTotal.Size = new Size(130, 29);
+            BtnMostrarTotal.TabIndex = 12;
+            BtnMostrarTotal.Text = "Mostrar Total";
+            BtnMostrarTotal.UseVisualStyleBackColor = true;
+            BtnMostrarTotal.Click += BtnMostrarTotal_Click;
+            // 
             // FrmNominaA
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(731, 473);
+            Controls.Add(BtnMostrarTotal);
             Controls.Add(CrearPdfBtn);
             Controls.Add(TotalNominaTxt);
             Controls.Add(TotalDocentesTxt);
-            Controls.Add(SalarioNetoTxt);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(DocentesOcasionalesTxt);
             Controls.Add(DocentesCatedraticosTxt);
             Controls.Add(label2);
@@ -187,12 +178,11 @@
         private Label label2;
         private TextBox DocentesCatedraticosTxt;
         private TextBox DocentesOcasionalesTxt;
-        private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox SalarioNetoTxt;
         private TextBox TotalDocentesTxt;
         private TextBox TotalNominaTxt;
         private Button CrearPdfBtn;
+        private Button BtnMostrarTotal;
     }
 }

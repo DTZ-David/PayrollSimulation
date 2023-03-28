@@ -27,7 +27,8 @@ namespace UI
         {
             InitializeComponent();
             docenteService = new DocenteService();
-
+            TotalDocentesTxt.Enabled = false;
+            TotalNominaTxt.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace UI
             if (validar == true)
             {
                 CrearDocenteOcasional();
-                CrearDocenteCatedratico(); 
+                CrearDocenteCatedratico();
             }
             else
             {
@@ -210,6 +211,14 @@ namespace UI
         private void CrearPdfBtn_Click(object sender, EventArgs e)
         {
             string Mensaje = docenteService.CrearPDF();
+            MessageBox.Show(Mensaje);
+
+        }
+
+        private void BtnMostrarTotal_Click(object sender, EventArgs e)
+        {
+            TotalNominaTxt.Text = docenteService.MostrarTotalLiquidacion();
+            TotalDocentesTxt.Text = docenteService.MostrarTotalDocentes();
         }
     }
 }

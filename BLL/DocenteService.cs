@@ -14,6 +14,7 @@ namespace BLL
         public DocenteService()
         {
             docenteRepository = new DocenteRepository();
+            
         }
         public string GuardarOcasionales(DocenteOcasional docenteOcasional)
         {
@@ -42,6 +43,64 @@ namespace BLL
 
                 return "Se presentó el siguiente error:" + exception.Message;
             }
+        }
+        public Responce Consultar()
+        {
+            Responce docenteResponce;
+            try
+            {
+                if (docenteRepository.Consultar() != null)
+                {
+                    List<Docente> docente = docenteRepository.Consultar();
+                    docenteResponce = new Responce(docente);
+                    return docenteResponce;
+                }
+                else
+                {
+                    return docenteResponce = new Responce("No se encontraron elementos");
+                }
+            }
+            catch (Exception e)
+            {
+                return docenteResponce = new Responce("Se produjo un error: " + e.Message);
+            }
+        }
+        public string MostrarTotalLiquidacion()
+        {
+            double liquidacion = 0;
+            if (Consultar().ListaVacia == true)
+            {
+                Console.WriteLine(Consultar().Mensaje);
+            }
+            else
+            {
+                List<Docente> liquidaciones = Consultar().docenteResponce;
+                foreach (var item in liquidaciones)
+                {
+                    liquidacion += item.Sueldo;
+                }
+            }
+            double liq = Math.Round(liquidacion, 2);
+            return liq.ToString();
+            
+        }
+        public string MostrarTotalDocentes()
+        {
+            int liquidacion = 0;
+            if (Consultar().ListaVacia == true)
+            {
+                Console.WriteLine(Consultar().Mensaje);
+            }
+            else
+            {
+                List<Docente> liquidaciones = Consultar().docenteResponce;
+                foreach (var item in liquidaciones)
+                {
+                    liquidacion += 1;
+                }
+            }
+            return liquidacion.ToString();
+
         }
         public string CrearPDF()
         {

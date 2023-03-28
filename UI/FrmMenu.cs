@@ -64,10 +64,10 @@ namespace UI
 
         private void BtnNominaB_Click(object sender, EventArgs e)
         {
-            PnlNav.Height = BtnNominaB.Height;
-            PnlNav.Top = BtnNominaB.Top;
-            BtnNominaB.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new FrmNominaB());
+            //PnlNav.Height = BtnNominaB.Height;
+            //PnlNav.Top = BtnNominaB.Top;
+            //BtnNominaB.BackColor = Color.FromArgb(46, 51, 73);
+            //OpenChildForm(new FrmNominaB());
         }
 
         private void button1_Click(object sender, EventArgs e)

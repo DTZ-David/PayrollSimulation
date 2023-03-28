@@ -40,5 +40,8 @@
             SalarioTotal = Suma - Resta;
         }
 
+        public DocenteCatedratico()
+        {
+        }
     }
 }

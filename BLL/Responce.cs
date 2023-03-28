@@ -11,6 +11,7 @@ namespace BLL
     {
         public List<DocenteOcasional> docentesResponce { get; set; }
         public List<DocenteCatedratico> docentesCResponce { get; set; }
+        public List<Docente> docenteResponce { get; set; }
         public bool ListaVacia { get; set; }
         public string Mensaje { get; set; }
         public Responce(List<DocenteOcasional> docentesResponce)
@@ -28,6 +29,12 @@ namespace BLL
         public Responce(List<DocenteCatedratico> docentesCResponce)
         {
             this.docentesCResponce = docentesCResponce;
+            this.ListaVacia = false;
+            this.Mensaje = "Lectura Exitosa";
+        }
+        public Responce(List<Docente> docenteResponce)
+        {
+            this.docenteResponce = docenteResponce;
             this.ListaVacia = false;
             this.Mensaje = "Lectura Exitosa";
         }

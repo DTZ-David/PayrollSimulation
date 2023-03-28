@@ -1,0 +1,6 @@
+Docente Catedratico;2786030
+Docente Ocasional;5093212
+Docente Catedratico;3432689,2
+Docente Ocasional;4821250
+Docente Catedratico;1849086,9548
+Docente Ocasional;6633750
