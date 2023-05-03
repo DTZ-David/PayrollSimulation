@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entity;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System.IO;
-using Entity;
-using System.Collections;
-using System.Text.RegularExpressions;
-using System.Runtime.Intrinsics.X86;
 
 namespace DAL
 {
